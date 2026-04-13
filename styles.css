@@ -490,6 +490,28 @@ a {
   letter-spacing: 0.12em;
 }
 
+.eyebrow--hero {
+  gap: 0;
+}
+
+.eyebrow--hero > span {
+  position: relative;
+  white-space: nowrap;
+}
+
+.eyebrow--hero > span + span {
+  margin-left: 16px;
+}
+
+.eyebrow--hero > span + span::before {
+  content: ".";
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.72;
+}
+
 .hero h1,
 .section-heading h2,
 .narrative-card h3,
@@ -1170,6 +1192,7 @@ a {
   position: absolute;
   inset: 0;
   background:
+    linear-gradient(90deg, rgba(156, 237, 255, 0.82), transparent 44%) top left / 46% 1px no-repeat,
     radial-gradient(circle at 22% 38%, rgba(118, 219, 255, 0.1), transparent 24%),
     radial-gradient(circle at 74% 58%, rgba(45, 139, 255, 0.08), transparent 24%);
   pointer-events: none;
@@ -1722,6 +1745,11 @@ a {
     padding: 68px 0;
   }
 
+  .section-heading h2 {
+    font-size: clamp(1.82rem, 7.8vw, 2.45rem);
+    line-height: 1.06;
+  }
+
   .hero h1 {
     max-width: none;
     font-size: clamp(1.9rem, 8.2vw, 2.75rem);
@@ -1737,12 +1765,63 @@ a {
     border-radius: 30px;
   }
 
+  .hero-panel::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:
+      linear-gradient(180deg, rgba(7, 14, 32, 0.18) 0%, rgba(7, 14, 32, 0.28) 36%, rgba(7, 14, 32, 0.56) 68%, rgba(7, 14, 32, 0.86) 100%),
+      linear-gradient(90deg, rgba(7, 14, 32, 0.95) 0%, rgba(7, 14, 32, 0.9) 42%, rgba(7, 14, 32, 0.72) 72%, rgba(7, 14, 32, 0.4) 100%),
+      radial-gradient(circle at 34% 30%, rgba(118, 219, 255, 0.14), transparent 24%),
+      url("logotech.jpeg") center center / cover no-repeat;
+    opacity: 0.28;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero .eyebrow {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 9px 12px;
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    line-height: 1.45;
+  }
+
+  .eyebrow--hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 4px;
+    column-gap: 0;
+  }
+
+  .eyebrow--hero > span + span {
+    margin-left: 0;
+  }
+
+  .eyebrow--hero > span:nth-child(2)::before,
+  .eyebrow--hero > span:nth-child(3)::before {
+    content: ".";
+    position: static;
+    transform: none;
+    margin: 0 0.45em 0 0.25em;
+    opacity: 0.72;
+  }
+
+  .eyebrow--hero > span:last-child {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
   .ticker__marquee {
-    overflow-x: auto;
-    padding-bottom: 6px;
-    scroll-snap-type: x proximity;
+    overflow: hidden;
+    padding-bottom: 0;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
   }
 
   .ticker__marquee::-webkit-scrollbar {
@@ -1750,30 +1829,18 @@ a {
   }
 
   .ticker__track {
-    animation: none;
+    gap: 10px;
+    animation: values-scroll 22s linear infinite;
   }
 
   .ticker__track span {
-    scroll-snap-align: start;
+    padding: 11px 15px;
+    font-size: 0.82rem;
+    letter-spacing: 0.02em;
   }
 
   .hero-panel__visual {
-    justify-self: center;
-    margin-right: 0;
-    width: min(100%, 304px);
-    height: auto;
-    min-height: 0;
-    border-radius: 26px;
-    animation: none;
-  }
-
-  .hero-panel__visual-frame {
-    border-radius: 26px;
-    transform: none;
-  }
-
-  .hero-panel__visual-image {
-    min-height: 300px;
+    display: none;
   }
 
   .hero__actions,
@@ -1834,12 +1901,13 @@ a {
     padding: 24px 20px;
   }
 
+  .about-heading-line {
+    white-space: normal;
+  }
+
   .values-marquee {
-    overflow-x: auto;
-    padding-bottom: 6px;
-    scroll-snap-type: x proximity;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    overflow: hidden;
+    padding-bottom: 0;
     mask-image: none;
   }
 
@@ -1848,13 +1916,12 @@ a {
   }
 
   .values-marquee__track {
-    animation: none;
+    animation: values-scroll 28s linear infinite;
   }
 
   .value-card {
-    flex-basis: min(82vw, 268px);
+    flex-basis: min(76vw, 252px);
     min-height: 172px;
-    scroll-snap-align: start;
   }
 
   .reason-card {
@@ -1873,6 +1940,11 @@ a {
   .service-card__media img {
     min-height: 220px;
     aspect-ratio: 4 / 3;
+  }
+
+  .service-card h3 {
+    font-size: clamp(1.68rem, 7vw, 2.25rem);
+    line-height: 1.04;
   }
 
   .service-carousel__controls,
