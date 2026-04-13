@@ -273,7 +273,7 @@ function setupServiceCarousel() {
     if (slides.length < 2) return;
     autoplayId = window.setInterval(() => {
       setActiveSlide(activeIndex + 1);
-    }, 4200);
+    }, 5600);
   };
 
   dots.forEach((dot, index) => {

@@ -491,25 +491,22 @@ a {
 }
 
 .eyebrow--hero {
-  gap: 0;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
 }
 
-.eyebrow--hero > span {
-  position: relative;
+.eyebrow--hero-row {
+  display: flex;
+  align-items: center;
+  gap: 0.42em;
   white-space: nowrap;
 }
 
-.eyebrow--hero > span + span {
-  margin-left: 16px;
-}
-
-.eyebrow--hero > span + span::before {
-  content: ".";
-  position: absolute;
-  left: -10px;
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 0.72;
+.eyebrow--hero-row--full {
+  width: 100%;
+  justify-content: center;
 }
 
 .hero h1,
@@ -1765,6 +1762,12 @@ a {
     border-radius: 30px;
   }
 
+  .hero-panel::before {
+    background:
+      linear-gradient(90deg, rgba(11, 23, 52, 0.99) 0%, rgba(7, 14, 32, 0.98) 48%, rgba(7, 14, 32, 0.88) 72%, rgba(7, 14, 32, 0.56) 100%),
+      linear-gradient(180deg, rgba(11, 23, 52, 0.96), rgba(6, 10, 22, 0.92));
+  }
+
   .hero-panel::after {
     content: "";
     position: absolute;
@@ -1772,9 +1775,9 @@ a {
     border-radius: inherit;
     background:
       linear-gradient(180deg, rgba(7, 14, 32, 0.18) 0%, rgba(7, 14, 32, 0.28) 36%, rgba(7, 14, 32, 0.56) 68%, rgba(7, 14, 32, 0.86) 100%),
-      linear-gradient(90deg, rgba(7, 14, 32, 0.95) 0%, rgba(7, 14, 32, 0.9) 42%, rgba(7, 14, 32, 0.72) 72%, rgba(7, 14, 32, 0.4) 100%),
+      linear-gradient(90deg, rgba(7, 14, 32, 0.98) 0%, rgba(7, 14, 32, 0.95) 44%, rgba(7, 14, 32, 0.76) 72%, rgba(7, 14, 32, 0.42) 100%),
       radial-gradient(circle at 34% 30%, rgba(118, 219, 255, 0.14), transparent 24%),
-      url("logotech.jpeg") center center / cover no-repeat;
+      url("logotech.jpeg") 74% 54% / 128% auto no-repeat;
     opacity: 0.28;
     pointer-events: none;
     z-index: 0;
@@ -1785,35 +1788,32 @@ a {
     justify-content: center;
     text-align: center;
     padding: 9px 12px;
+    border-color: rgba(141, 208, 255, 0.14);
+    background: rgba(8, 15, 34, 0.94);
     font-size: 0.66rem;
     letter-spacing: 0.1em;
     line-height: 1.45;
+    backdrop-filter: none;
   }
 
   .eyebrow--hero {
-    display: flex;
-    flex-wrap: wrap;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     row-gap: 4px;
     column-gap: 0;
   }
 
-  .eyebrow--hero > span + span {
-    margin-left: 0;
+  .eyebrow--hero-row {
+    justify-content: center;
+    gap: 0.4em;
+    white-space: nowrap;
   }
 
-  .eyebrow--hero > span:nth-child(2)::before,
-  .eyebrow--hero > span:nth-child(3)::before {
-    content: ".";
-    position: static;
-    transform: none;
-    margin: 0 0.45em 0 0.25em;
-    opacity: 0.72;
-  }
-
-  .eyebrow--hero > span:last-child {
-    flex-basis: 100%;
-    text-align: center;
+  .eyebrow--hero-row--full {
+    width: 100%;
+    justify-content: center;
   }
 
   .ticker__marquee {
