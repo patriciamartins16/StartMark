@@ -231,104 +231,6 @@ function setupHeroImageFx() {
   visual.addEventListener("pointercancel", reset);
 }
 
-function setupServiceCarousel() {
-  const carousel = document.querySelector("[data-service-carousel]");
-  const track = carousel?.querySelector("[data-service-track]");
-  const viewport = carousel?.querySelector(".service-carousel__viewport");
-  const prevButton = carousel?.querySelector("[data-service-prev]");
-  const nextButton = carousel?.querySelector("[data-service-next]");
-  const dots = carousel
-    ? Array.from(carousel.querySelectorAll("[data-service-dot]"))
-    : [];
-
-  if (!carousel || !track) return;
-
-  const slides = Array.from(track.children);
-  if (!slides.length) return;
-
-  let activeIndex = 0;
-  let autoplayId = null;
-  let touchStartX = 0;
-  let touchStartY = 0;
-
-  const setActiveSlide = (nextIndex) => {
-    activeIndex = (nextIndex + slides.length) % slides.length;
-    track.style.transform = `translateX(-${activeIndex * 100}%)`;
-
-    dots.forEach((dot, index) => {
-      dot.classList.toggle("is-active", index === activeIndex);
-      dot.setAttribute("aria-current", index === activeIndex ? "true" : "false");
-    });
-  };
-
-  const stopAutoplay = () => {
-    if (autoplayId) {
-      window.clearInterval(autoplayId);
-      autoplayId = null;
-    }
-  };
-
-  const startAutoplay = () => {
-    stopAutoplay();
-    if (slides.length < 2) return;
-    autoplayId = window.setInterval(() => {
-      setActiveSlide(activeIndex + 1);
-    }, 5600);
-  };
-
-  dots.forEach((dot, index) => {
-    dot.addEventListener("click", () => {
-      setActiveSlide(index);
-      startAutoplay();
-    });
-  });
-
-  prevButton?.addEventListener("click", () => {
-    setActiveSlide(activeIndex - 1);
-    startAutoplay();
-  });
-
-  nextButton?.addEventListener("click", () => {
-    setActiveSlide(activeIndex + 1);
-    startAutoplay();
-  });
-
-  carousel.addEventListener("mouseenter", stopAutoplay);
-  carousel.addEventListener("mouseleave", startAutoplay);
-  carousel.addEventListener("focusin", stopAutoplay);
-  carousel.addEventListener("focusout", startAutoplay);
-
-  viewport?.addEventListener(
-    "touchstart",
-    (event) => {
-      const touch = event.changedTouches[0];
-      touchStartX = touch.clientX;
-      touchStartY = touch.clientY;
-    },
-    { passive: true }
-  );
-
-  viewport?.addEventListener(
-    "touchend",
-    (event) => {
-      const touch = event.changedTouches[0];
-      const deltaX = touch.clientX - touchStartX;
-      const deltaY = touch.clientY - touchStartY;
-
-      if (Math.abs(deltaX) < 48 || Math.abs(deltaX) <= Math.abs(deltaY)) {
-        return;
-      }
-
-      setActiveSlide(activeIndex + (deltaX < 0 ? 1 : -1));
-      startAutoplay();
-    },
-    { passive: true }
-  );
-
-  setActiveSlide(0);
-  startAutoplay();
-}
-
 function setupAnimations() {
   if (!window.gsap || !window.ScrollTrigger) return;
 
@@ -398,7 +300,7 @@ function setupAnimations() {
 
   gsap
     .utils
-    .toArray(".service-card__media img, .stack-card img")
+    .toArray(".stack-card img")
     .forEach((image) => {
       gsap.to(image, {
         scale: 1.08,
@@ -420,6 +322,5 @@ document.addEventListener("DOMContentLoaded", () => {
   setupMobileNav();
   setupTiltCards();
   setupHeroImageFx();
-  setupServiceCarousel();
   setupAnimations();
 });

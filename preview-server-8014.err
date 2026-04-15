@@ -1,0 +1,25 @@
+192.168.1.33 - - [15/Apr/2026 13:38:35] "GET / HTTP/1.1" 200 -
+192.168.1.33 - - [15/Apr/2026 13:38:49] "GET / HTTP/1.1" 200 -
+192.168.1.61 - - [15/Apr/2026 13:41:12] "GET / HTTP/1.1" 200 -
+192.168.1.61 - - [15/Apr/2026 13:41:12] "GET /styles.css HTTP/1.1" 200 -
+192.168.1.61 - - [15/Apr/2026 13:41:12] "GET /script.js HTTP/1.1" 200 -
+192.168.1.61 - - [15/Apr/2026 13:41:12] "GET /LOGO-header.png HTTP/1.1" 200 -
+192.168.1.61 - - [15/Apr/2026 13:41:12] "GET /logotech.jpeg HTTP/1.1" 200 -
+192.168.1.61 - - [15/Apr/2026 13:41:12] "GET /LOGOS/transparent/LOGO1.png?v=3 HTTP/1.1" 200 -
+192.168.1.61 - - [15/Apr/2026 13:41:12] "GET /LOGOS/transparent/LOGO2.png?v=3 HTTP/1.1" 200 -
+192.168.1.61 - - [15/Apr/2026 13:41:12] "GET /LOGOS/transparent/LOGO3.png?v=3 HTTP/1.1" 200 -
+192.168.1.61 - - [15/Apr/2026 13:41:12] "GET /LOGOS/transparent/LOGO4.png?v=3 HTTP/1.1" 200 -
+192.168.1.61 - - [15/Apr/2026 13:41:12] "GET /LOGOS/transparent/LOGO9.png?v=3 HTTP/1.1" 200 -
+192.168.1.61 - - [15/Apr/2026 13:41:12] "GET /LOGOS/transparent/LOGO8.png?v=3 HTTP/1.1" 200 -
+192.168.1.61 - - [15/Apr/2026 13:41:12] "GET /LOGOS/transparent/LOGO5.png?v=3 HTTP/1.1" 200 -
+192.168.1.61 - - [15/Apr/2026 13:41:12] "GET /LOGOS/transparent/LOGO6.png?v=3 HTTP/1.1" 200 -
+192.168.1.61 - - [15/Apr/2026 13:41:12] "GET /LOGOS/transparent/LOGO10.png?v=3 HTTP/1.1" 200 -
+192.168.1.61 - - [15/Apr/2026 13:41:12] "GET /LOGOS/transparent/LOGO7.png?v=3 HTTP/1.1" 200 -
+192.168.1.61 - - [15/Apr/2026 13:41:12] "GET /WhatsApp%20Image%202026-04-11%20at%2019.09.48.jpeg HTTP/1.1" 200 -
+192.168.1.61 - - [15/Apr/2026 13:41:13] "GET /painelprincipal.jpeg HTTP/1.1" 200 -
+192.168.1.61 - - [15/Apr/2026 13:41:13] "GET /pc.jpeg HTTP/1.1" 200 -
+192.168.1.61 - - [15/Apr/2026 13:41:13] "GET /painel2.jpeg HTTP/1.1" 200 -
+192.168.1.61 - - [15/Apr/2026 13:41:13] "GET /fotocesar2.jpeg HTTP/1.1" 200 -
+192.168.1.61 - - [15/Apr/2026 13:41:13] "GET /negocio.jpeg HTTP/1.1" 200 -
+192.168.1.61 - - [15/Apr/2026 13:41:13] code 404, message File not found
+192.168.1.61 - - [15/Apr/2026 13:41:13] "GET /favicon.ico HTTP/1.1" 404 -
