@@ -937,9 +937,6 @@ a {
 }
 
 .service-card--visual .service-overview__copy h3 {
-  font-size: clamp(1.18rem, 1.62vw, 1.56rem);
-  line-height: 1.1;
-  letter-spacing: -0.03em;
   white-space: nowrap;
 }
 
