@@ -187,9 +187,9 @@ a {
   align-items: center;
   justify-content: center;
   justify-self: center;
-  gap: 24px;
+  gap: 18px;
   padding: 0;
-  font-size: 0.96rem;
+  font-size: 0.93rem;
   color: var(--muted);
   transition: gap 0.35s ease, font-size 0.35s ease, transform 0.35s ease;
 }
@@ -307,7 +307,7 @@ a {
   position: relative;
   overflow: hidden;
   display: grid;
-  grid-template-columns: minmax(0, 1.18fr) minmax(300px, 0.78fr);
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.74fr);
   align-items: stretch;
   gap: clamp(24px, 2.4vw, 40px);
   min-height: clamp(500px, 58vh, 560px);
@@ -338,7 +338,7 @@ a {
   position: relative;
   z-index: 1;
   align-self: start;
-  max-width: 660px;
+  max-width: min(100%, 600px);
   padding-right: 0;
   padding-top: 8px;
 }
@@ -347,9 +347,9 @@ a {
   position: relative;
   z-index: 1;
   align-self: center;
-  justify-self: start;
+  justify-self: end;
   margin-right: 0;
-  width: min(100%, 348px);
+  width: min(100%, 332px);
   height: auto;
   min-height: 0;
   perspective: 1200px;
@@ -538,7 +538,8 @@ a {
 
 .hero-line {
   display: block;
-  white-space: nowrap;
+  white-space: normal;
+  text-wrap: balance;
 }
 
 .hero-line + .hero-line {
@@ -566,7 +567,8 @@ a {
 
 .hero__lead-line {
   display: block;
-  white-space: nowrap;
+  white-space: normal;
+  text-wrap: pretty;
 }
 
 .hero__lead-line + .hero__lead-line {
@@ -743,6 +745,52 @@ a {
   max-height: clamp(58px, 5vw, 74px);
   object-fit: contain;
   filter: saturate(1.02) contrast(1.05);
+}
+
+.ticker__logo {
+  display: block;
+  transform: scale(var(--logo-scale, 1));
+  transform-origin: center;
+}
+
+.ticker__logo--1 {
+  --logo-scale: 1.48;
+}
+
+.ticker__logo--2 {
+  --logo-scale: 1.28;
+}
+
+.ticker__logo--3 {
+  --logo-scale: 1.18;
+}
+
+.ticker__logo--4 {
+  --logo-scale: 1.02;
+}
+
+.ticker__logo--5 {
+  --logo-scale: 1.04;
+}
+
+.ticker__logo--6 {
+  --logo-scale: 1.58;
+}
+
+.ticker__logo--7 {
+  --logo-scale: 1.56;
+}
+
+.ticker__logo--8 {
+  --logo-scale: 1.18;
+}
+
+.ticker__logo--9 {
+  --logo-scale: 1.28;
+}
+
+.ticker__logo--10 {
+  --logo-scale: 1;
 }
 
 .section-heading {
