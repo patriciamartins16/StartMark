@@ -2404,3 +2404,38 @@ a {
     animation: none;
   }
 }
+.privacy-section {
+  padding-top: 72px;
+}
+
+.privacy-card {
+  max-width: 900px;
+  padding: clamp(28px, 4vw, 46px);
+}
+
+.privacy-card h3 {
+  margin: 32px 0 10px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  color: var(--text);
+}
+
+.privacy-card h3:first-child {
+  margin-top: 0;
+}
+
+.privacy-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.privacy-card a:not(.button) {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.privacy-back {
+  margin-top: 34px;
+}
